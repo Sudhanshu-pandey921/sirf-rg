@@ -4,7 +4,7 @@ trigger:
 pool: may-pool
 
 stages:
-  - stage: 1ststage
+  - stage: firststage
     displayName: init
     jobs:
       - job: terraforminit
@@ -18,7 +18,7 @@ stages:
               backendAzureRmContainerName: 'rajucnt12'
               backendAzureRmKey: 'raju.tfstate'
 
-  - stage: 2ndstage
+  - stage: secondstage
     displayName: plan
     jobs:
       - job: terraformplan
@@ -39,7 +39,7 @@ stages:
               environmentServiceNameAzureRM: 'may-sc'
 
 
-  - stage: 3rdstage
+  - stage: laststage
     displayName: apply
     jobs:
       - job: terraformapply
